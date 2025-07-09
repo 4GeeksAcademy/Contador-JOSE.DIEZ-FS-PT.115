@@ -1,18 +1,32 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-
-//Bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap"
-
-// index.css'
 import '../styles/index.css'
-
-// components
 import Home from './components/Home';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Home/>
-  </React.StrictMode>,
-)
+const reactRender = ReactDOM.createRoot(document.getElementById('root'))
+export let counter = 0;
+
+setInterval(() => {
+ 
+  const digito1 = counter % 10;
+  const digito2 = Math.floor(counter / 10) % 10;
+  const digito3 = Math.floor(counter / 100) % 10;
+  const digito4 = Math.floor(counter / 1000) % 10;
+  
+  console.log(digito4, digito3, digito2, digito1);
+  
+  reactRender.render(
+    <React.StrictMode>
+      <Home 
+        counter={counter}
+        digito1={digito1}
+        digito2={digito2}
+        digito3={digito3}
+        digito4={digito4}
+      />
+    </React.StrictMode>
+  )
+  counter++;
+}, 1000);
