@@ -9,3 +9,17 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+body {
+    background-image: url(https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2022/06/08/16546925977742.jpg);
+    background-size: cover;
+    margin-top: 20px;
+}
+.padre{
+    text-align: center;
+}
+.padre div {
+background-color: black;
+display: inline-block;
+font-size: 200px;
+color: aliceblue;
+}
